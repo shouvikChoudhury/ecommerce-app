@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { removeCart } from '../Store/reduxToolkit'
 import { NotificationContainer, NotificationManager } from 'react-notifications';
@@ -7,7 +7,7 @@ import 'react-notifications/lib/notifications.css';
 const Cart = () => {
     const mycart = useSelector((state) => state.cartlist)
     const dispatch = useDispatch()
-    console.log(mycart)
+
     return (
         <div className="container ">
             <NotificationContainer />

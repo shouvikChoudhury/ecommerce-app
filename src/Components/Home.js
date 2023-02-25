@@ -9,7 +9,7 @@ const Home = () => {
     const getproducts = async () => {
         const response = await fetch('https://fakestoreapi.com/products');
         const data = await response.json();
-        console.log(data);
+
         setproducts(data);
     };
     useEffect(() => {
@@ -17,13 +17,14 @@ const Home = () => {
     }, []);
 
     return (
-        <div className="container ">
+        <div className="container">
             <NotificationContainer />
             <h5 className="text-uppercase">men's clothing</h5>
             {products.map((item) => {
                 if (item.category == "men's clothing") {
                     return (
                         <Productshow id={item.id}
+                            category={item.category}
                             image={item.image}
                             price={item.price}
                             title={item.title}

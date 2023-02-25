@@ -31,7 +31,7 @@ const Shop = () => {
     return (
         <div className="container ">
             <NotificationContainer />
-            <div className='row'>
+            <div className='row pt-3'>
                 <div className="d-flex justify-content-center col-lg-6 mb-3">
                     <h4>Filter by Category</h4>
                     <select value={selectd} onChange={e => { setselectd(e.target.value) }}>

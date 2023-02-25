@@ -13,7 +13,7 @@ const HeadNav = () => {
     }, 0)
 
     return (
-        <nav className='sticky-top d-flex justify-content-around breadcrumb'>
+        <nav className='sticky-top d-flex justify-content-around breadcrumb mb-0'>
             <ul><Link to="/home"><b>Home</b></Link></ul>
             <ul><Link to="/shop"><b>Shop</b></Link></ul>
             <ul><Link to="/cart"><b>Cart</b></Link></ul>

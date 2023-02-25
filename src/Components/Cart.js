@@ -28,8 +28,8 @@ const Cart = () => {
                                     <div className="">Title: {item.title}</div>
                                     <div className=""><b>Price: {item.price} INR</b></div>
                                     <div className=""><i>{item.description}</i></div>
-                                    <div className=""><i><b>Quantity: {item.counts}</b></i></div>
-                                    <button className="mt-3 pl-5 pr-5 btn-danger" onClick={(e) => {
+                                    <div className="mt-3"><i><b>Quantity: {item.counts}</b></i></div>
+                                    <button className="mt-5 pl-5 pr-5 btn-danger" onClick={(e) => {
                                         NotificationManager.info('Product removed from cart', 'Warning!', 1500);
                                         dispatch(removeCart(item.id))
                                     }}>Remove from cart</button>

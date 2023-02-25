@@ -17,7 +17,7 @@ const Home = () => {
     }, []);
 
     return (
-        <div className="container">
+        <div className="container pt-3">
             <NotificationContainer />
             <h5 className="text-uppercase">men's clothing</h5>
             {products.map((item) => {

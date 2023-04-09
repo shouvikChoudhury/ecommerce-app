@@ -2,19 +2,10 @@ import React, { useEffect, useState } from 'react'
 import { NotificationContainer } from 'react-notifications';
 import 'react-notifications/lib/notifications.css';
 import Productshow from './Productshow';
+import useFetch from './useFetch';
 
 const Home = () => {
-    const [products, setproducts] = useState([]);
-
-    const getproducts = async () => {
-        const response = await fetch('https://fakestoreapi.com/products');
-        const data = await response.json();
-
-        setproducts(data);
-    };
-    useEffect(() => {
-        getproducts();
-    }, []);
+    const { products } = useFetch('https://fakestoreapi.com/products')
 
     return (
         <div className="container pt-3">

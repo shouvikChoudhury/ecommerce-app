@@ -4,21 +4,14 @@ import { useDispatch } from 'react-redux'
 import { addCart } from '../Store/reduxToolkit'
 import { NotificationContainer, NotificationManager } from 'react-notifications';
 import 'react-notifications/lib/notifications.css';
+import useFetch from './useFetch';
 
 const Shop = () => {
-    const [products, setproducts] = useState([]);
     const [search, setSearch] = useState('')
     const [selectd, setselectd] = useState("MEN'S CLOTHING")
     const dispatch = useDispatch()
 
-    const getproducts = async () => {
-        const response = await fetch('https://fakestoreapi.com/products');
-        const data = await response.json();
-        setproducts(data);
-    };
-    useEffect(() => {
-        getproducts();
-    }, [])
+    const { products } = useFetch('https://fakestoreapi.com/products')
 
     const selectdProduct = products.filter(i =>
         i.category.toLowerCase() === selectd.toLowerCase()
